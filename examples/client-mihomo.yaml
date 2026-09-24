@@ -1,0 +1,25 @@
+# Clash Verge Rev / 任何 Mihomo 内核客户端
+mixed-port: 7890
+proxies:
+  - name: "TUIC-tuic.example.com"
+    type: tuic
+    server: tuic.example.com
+    port: 443
+    uuid: 00000000-0000-0000-0000-000000000000
+    password: replace-with-your-password
+    alpn: [h3]
+    congestion-controller: bbr
+    udp-relay-mode: native
+    reduce-rtt: false
+    sni: tuic.example.com
+
+proxy-groups:
+  - name: "PROXY"
+    type: select
+    proxies:
+      - "TUIC-tuic.example.com"
+      - DIRECT
+
+rules:
+  - GEOIP,CN,DIRECT
+  - MATCH,PROXY

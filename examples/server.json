@@ -1,0 +1,46 @@
+{
+  "log": {
+    "level": "info",
+    "timestamp": true
+  },
+  "certificate_providers": [
+    {
+      "type": "acme",
+      "tag": "acme-cert",
+      "domain": ["tuic.example.com"],
+      "email": "you@example.com",
+      "data_directory": "/var/lib/sing-box/acme"
+    }
+  ],
+  "inbounds": [
+    {
+      "type": "tuic",
+      "tag": "tuic-in",
+      "listen": "::",
+      "listen_port": 443,
+      "users": [
+        {
+          "name": "user1",
+          "uuid": "00000000-0000-0000-0000-000000000000",
+          "password": "replace-with-your-password"
+        }
+      ],
+      "congestion_control": "bbr",
+      "auth_timeout": "3s",
+      "zero_rtt_handshake": false,
+      "heartbeat": "10s",
+      "tls": {
+        "enabled": true,
+        "server_name": "tuic.example.com",
+        "alpn": ["h3"],
+        "certificate_provider": "acme-cert"
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "type": "direct",
+      "tag": "direct"
+    }
+  ]
+}
