@@ -3,7 +3,7 @@
 基于 [sing-box](https://sing-box.sagernet.org/) 的 **TUIC v5** 一键安装脚本。
 
 - 通过 sing-box **官方 APT 源**安装，之后可以直接用 `apt upgrade` 跟随官方更新
-- 使用 sing-box 1.14 新增的 **certificate provider（ACME）**自动申请、续期 Let's Encrypt 证书，不需要另外装 acme.sh 或 certbot
+- 使用 sing-box 1.14 新增的 **certificate provider（ACME）** 自动申请、续期 Let's Encrypt 证书，不需要另外装 acme.sh 或 certbot
 - 已适配 sing-box 1.14 的新写法：旧的 TLS 内联 `acme` 写法在 1.14 已弃用，1.16 将被移除
 - 安装完成后自动输出分享链接、Clash Verge（Mihomo）配置和 sing-box 客户端配置
 
