@@ -110,3 +110,8 @@ TUIC 走的是 **UDP**，最常见的原因是安全组只放行了 TCP。另外
 ## License
 
 [MIT](LICENSE)
+
+
+## 📢 Telegram 频道
+
+脚本更新、sing-box 版本变动提醒和新教程会发在 Telegram 频道，欢迎关注：[t.me/suduwuxiantop](https://t.me/suduwuxiantop)
